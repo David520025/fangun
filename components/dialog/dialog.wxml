@@ -1,0 +1,39 @@
+<!--components/dialog/dialog.wxml-->
+<view class='modal {{skin}}' >
+  <view class='main'>
+    <view class='header' wx:if="{{modalData.header!=undefined}}">
+      <view class='title'>{{modalData.header.title.text}}</view>
+			<block wx:if="{{modalData.header.headImageSrc!=undefine}}">
+				<view class='headerBorder' wx:if="{{modalData.header}}"></view>
+				<image src='{{modalData.header.headImageSrc}}'></image>
+				<view class='imgName'>{{modalData.header.headName}}</view>
+			</block>
+    </view>
+    <view class='body'>
+      <view class='lists' wx:if="{{modalData.list!=undefined && modalData.list.length!=0}}">
+				<block wx:for="{{modalData.list}}" wx:key="{{index}}">
+					<view wx:if="{{item.showState!=0}}">
+						<view class='' style='color:{{modalData.listEntryColor}}' class='entry'>{{item.entry}}</view>
+						<view style='color:{{modalData.listEntryColor}}'>：</view>
+						<view class='itemValue'>
+							<text wx:for="{{item.value}}" wx:key="{{key}}" wx:for-item="vItem" class='{{vItem.vClass}}'>{{vItem.v}}</text>
+						</view>
+					</view>
+				</block>
+
+      </view>
+			<view wx:elif="{{modalData.text!=undefined && modalData.text.length!=0}}" class='text {{modalData.text.length==1?"oneText":""}}'  style="margin-top:{{modalData.header==undefined?'56rpx':'34rpx'}}">
+				<text wx:for="{{modalData.text}}" wx:key="{{key}}">{{item}}</text>
+			</view>
+      <view class='remind' class='remind' wx:if="{{modalData.remind!=undefine}}">{{modalData.remind}}</view>
+    </view>
+    <view class='footer {{modalData.btns.length==1?"btnOne":""}}'>
+      <!-- <view bindtap="{{modalData.btns[0].type=='close'?'closeModal':modalData.btns[0].event}}" class='btn' bindtap="{{modalData.btns[0].type=='close'?'closeModal':'modalAction' }}" wx:if="{{modalData.btns.length==2}}">{{modalData.btns[0].name}}</view>
+			<view class='btn'  bindtap="{{modalData.btns[1].type=='close'?'closeModal':'modalAction' }}">{{modalData.btns[1].name}}</view> -->
+			<view wx:for="{{modalData.btns}}" wx:key="{{key}}"
+				bindtap="{{item.type=='close'?'closeModal':'modalAction'}}"
+				class="btn " hover-class="{{item.type=='close'?'btn_ui_left':'btn_ui_right'}}" hover-stay-time="10"
+			>{{item.name}}</view>
+    </view>
+  </view>
+</view>

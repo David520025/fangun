@@ -1,0 +1,187 @@
+button::after{
+    border:none;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 200rpx 0;
+    box-sizing: border-box;
+  } 
+  
+input{
+    outline:none;
+    border:none;
+    list-style: none;
+}
+
+.container {
+    padding: 0;
+    display: block;
+}
+
+.pageTitle {
+    width:100%;
+    background-color:rgba(243,67,67,1);
+    font-family:PingFangSC-Medium;
+    font-size:36rpx;
+    text-align:center;
+    color:#fff;
+    line-height: 88rpx;
+    height:88rpx;
+}
+
+.searchColumn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30rpx 30rpx 22rpx 30rpx;
+
+    justify-content: space-between;
+
+    
+}
+
+.searchColumn .searchInput {
+    width:600rpx;
+
+    display: flex;
+    border-radius: 28rpx;
+    height: 60rpx;
+    background-color:rgb(247, 247,247);
+}
+
+.searchColumn .searchInput image {
+    display:block;
+    width:30rpx;
+    height:30rpx;
+    padding: 15rpx 20rpx 15rpx 30rpx;
+}
+
+.searchColumn .searchInput input {
+    width:75%;
+    height:100%;
+    font-size:28rpx;
+    color: rgb(51, 51, 51);
+}
+
+.searchColumn .search {
+
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:30rpx;
+    margin:auto;
+    color:rgb(247,63,63);
+    font-size:30rpx;
+    margin-left:23rpx;
+    background-color:#fff;
+    margin:0;
+    padding:30rpx 0 22rpx 0;
+    line-height:56rpx;
+    
+}
+
+.box {
+    box-sizing:border-box;
+    padding:0 30rpx 16rpx 30rpx;
+    width:100%; 
+}
+
+.itemHead {
+    display: flex;
+    justify-content: space-between;
+}
+
+.itemHead .des {
+    flex:1;
+    font-family:PingFangSC-Regular;
+    font-size:28rpx;
+    color:rgb(153,153,153);
+    flex:1;
+    line-height:40rpx;
+}
+
+.itemHead .delete image {
+    flex:1;
+
+    display: block;
+    width:34rpx;
+    height:40rpx;
+}
+
+/*  */
+.itemList {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:-20rpx;
+    margin-right:-20rpx;
+    
+}
+
+.itemList .item {
+    padding:10rpx 24rpx;
+    font-family:PingFangSC-Regular;
+    font-size:28rpx;
+    color:rgb(153,153,153);
+    border-radius:40rpx;
+    background-color:rgb(247, 247,247);
+    margin:20rpx;
+}
+
+/* 店家列表 */
+.storeInfo {
+    border-bottom: 1px solid #eee;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.storeInfo .name {
+    font-family:PingFangSC-Regular;
+    font-size:32rpx;
+    color:rgb(51,51,51);
+
+    margin-top: 28rpx;
+    margin-bottom: 20rpx;
+}
+
+.storeInfo .address {
+    font-family:PingFangSC-Regular;
+    font-size:22rpx;
+    color:rgb(153,153,153);
+
+    margin-bottom: 20rpx;
+}
+
+/* 列表数据为空时 */
+.empty {
+    margin-top: 136rpx;
+    margin-bottom: 28rpx;
+    margin-left:auto;
+    margin-right:auto;
+
+    display: block;
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.emptyText {
+    margin-bottom: 18rpx;
+
+    font-family:PingFangSC-Regular;
+    font-size:34rpx;
+    color:rgb(51,51,51);
+    text-align: center;
+}
+
+.emptyTip {
+    font-family:PingFangSC-Regular;
+    font-size:20rpx;
+    color:rgb(153,153,153);
+    text-align: center;
+}

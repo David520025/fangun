@@ -1,0 +1,63 @@
+<!-- index.wxml -->
+<view class="container">
+    <view class="pageTitle">{{pageTitle}}</view>
+    <!-- 搜索栏目 -->
+    <form class="searchColumn"  bindsubmit="searchStore">
+        <view class="searchInput">
+            <image src="../../resource/images/customEntrance/search3.png"></image>
+            <input placeholder="" auto-focus name='inputName' />
+        </view>
+        <button class="search" form-type='submit'>搜索</button>
+    </form>
+    
+    <block wx:if="{{showList}}">
+        <view class="storeListBox">
+            <block wx:if="{{storeList.length > 0}}">
+                <!-- 搜索列表 -->
+                <block wx:for="{{storeList}}" wx:key="*this">
+                    <view bindtap="storeHeadPage" class="storeInfo" data-sid="{{item.id}}">
+                        <view class="name">{{item.name}}</view>
+                        <view class="address">{{item.pca}}{{item.address}}</view>
+                    </view>
+                </block>
+            </block>
+            <block wx:else>
+                <image class="empty" src="../../resource/images/searchStore/empty3.png" />
+                <view class="emptyText">没有搜索结果</view>
+                <view class="emptyTip">换个关键字试试</view>
+            </block>
+        </view>
+    </block>
+
+    <block wx:else>
+        <!-- 搜索历史 -->
+        <!-- <view class="box">
+            <view class="itemHead">
+                <view class="des">搜索历史</view>
+                <view class="delete">
+                    <image src="../../resource/images/searchStore/delete3.png" />
+                </view>
+            </view>
+            <view class="itemList">
+                <view class="item">翻滚网络专区</view>
+                <view class="item">翻滚美发</view>
+                <view class="item">翻滚艺术</view>
+                <view class="item">翻滚人潮</view>
+                <view class="item">翻滚社区</view>
+            </view>
+        </view> -->
+        <!-- 推荐搜索 -->
+        <!-- <view class="box">
+            <view class="itemHead">
+                <view class="des">推荐搜索</view>
+            </view>
+            <view class="itemList">
+                <view class="item">翻滚网络专区</view>
+                <view class="item">翻滚美发</view>
+                <view class="item">翻滚艺术</view>
+                <view class="item">翻滚人潮</view>
+                <view class="item">翻滚社区</view>
+            </view>
+        </view> -->
+    </block>
+</view>

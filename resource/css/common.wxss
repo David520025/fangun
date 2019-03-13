@@ -1,0 +1,41 @@
+.tabtar-box {
+    position: fixed;
+    height: 100rpx;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1999;
+
+    display: flex;
+    justify-content: space-around;
+
+    background-color: #fff;
+
+    padding-top: 10rpx;
+    box-shadow:2px 2px 2px 1px rgba(0,0,0,1);
+
+}
+
+.tabtar-box .tabtar-item  {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.tabtar-box .tabtar-item > image {
+    display:block;
+    width:60rpx;
+    height:60rpx;
+    margin-bottom:6rpx;
+}
+
+.tabtar-box .tabtar-item > view {
+    font-size: 20rpx;
+    text-align: center;
+    color:#c5c5c5;
+    line-height: 1.2;
+}
+
+.tabtar-box .tabtar-item.active > view {
+    color:rgb(243,67,67);
+}

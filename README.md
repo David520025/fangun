@@ -1,2 +1,2 @@
-# fangun
-预约吧
+# miniProgram
+预约吧微信小程序

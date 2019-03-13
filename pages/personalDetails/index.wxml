@@ -1,0 +1,120 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="pageTitle">{{pageTitle}}</view>
+  
+  <view class="box">
+    <!-- 头像 -->
+    <view class="item" bindtap="avatarPage">
+      <view>
+        <text decode ="{{true}}" space="{{true}}">头&emsp;&emsp;像：</text>
+      </view>
+      <view><image class="buddha" src="https://www.yuyue58.cn/images2/{{personalData.headPhoto}}"/></view>
+      <view><image class="foldIcon" src="../../resource/images/common/icon-r3.png"/></view>
+    </view>
+
+    <!-- 姓名 -->
+    <view class="item" bindtap="namePage">
+      <view>
+        <text decode ="{{true}}" space="{{true}}">姓&emsp;&emsp;名：</text>
+      </view>
+      <view>{{personalData.name}}</view>
+      <view><image class="foldIcon" src="../../resource/images/common/icon-r3.png"/></view>
+    </view>
+
+    <!-- 性别 -->
+    <view class="item" bindtap="gbModalSwitch">
+      <view>
+        <text decode ="{{true}}" space="{{true}}">性&emsp;&emsp;别：</text>
+      </view>
+      <view class="sex">
+        <block wx:if="{{personalData.gender == 0}}">
+          <view>男</view>
+          <image src="../../resource/images/common/boy3.png"/>
+        </block>
+        <block wx:else>
+          <view>女</view>
+          <image src="../../resource/images/common/girl3.png"/>
+        </block>
+      </view>
+      <view><image class="foldIcon" src="../../resource/images/common/icon-r3.png"/></view>
+    </view>
+
+    <!-- 电话 -->
+    <view class="item lastChild" bindtap="makingCalls" data-tel="{{personalData.mobile}}">
+      <view>
+        <text decode ="{{true}}" space="{{true}}">电&emsp;&emsp;话：</text>
+      </view>
+      <view>{{personalData.mobile}}</view>
+      <view></view>
+    </view>
+  </view>
+
+  <!-- 消费记录 -->
+  <view class="box">
+    <view class="item" bindtap="expenseCalendarPage">
+      <view>
+        <text>消费记录</text>
+      </view>
+      <view></view>
+      <view><image class="foldIcon" src="../../resource/images/common/icon-r3.png"/></view>
+    </view>
+
+    <!-- 修改密码 -->
+    <view class="item" bindtap="passwordPage">
+      <view>
+        <text>修改密码</text>
+      </view>
+      <view></view>
+      <view><image class="foldIcon" src="../../resource/images/common/icon-r3.png"/></view>
+    </view>
+
+    <!-- 意见反馈 -->
+    <view class="item" bindtap="feedback">
+      <view>
+        <text>意见反馈</text>
+      </view>
+      <view></view>
+      <view><image class="foldIcon" src="../../resource/images/common/icon-r3.png"/></view>
+    </view>
+  </view>
+
+  <view class="exit" bindtap="exitLogin">退出登录</view>
+
+
+  <!-- 底部导航栏 -->
+  <view class="tabtar-box">
+      <view class="tabtar-item" bindtap="customPage">
+          <image src="../../resource/images/common/appoint3.png" />
+          <view>预约</view>
+      </view>
+      <view class="tabtar-item active" bindtap="appointmentVoice">
+          <image src="../../resource/images/common/add3.png" />
+          <view>添加</view>
+      </view>
+      <view class="tabtar-item {{tabbarActive ? 'active' : ''}}">
+          <image src="{{tabbarActive ? '../../resource/images/common/mine3a.png' : '../../resource/images/common/mine3.png'}}" />
+          <view>我的</view>
+      </view>
+  </view>
+
+  <!-- 男女弹出层 -->
+  <block wx:if="{{gbModal}}">
+      <view class="mask" catchtouchmove="preventTouchMove"></view>
+      <view class="chooseModal">
+          <view class="chooseSex" bindtap="chosseAvatar" data-gender="0">
+            <image src="../../resource/images/common/boy3.png" />
+            <view>男</view>
+          </view>
+
+          <view class="chooseSex" bindtap="chosseAvatar" data-gender="1">
+            <image src="../../resource/images/common/girl3.png" />
+            <view>女</view>
+          </view>
+          <view style="clear:both;"></view>
+
+          <view class="cancel" bindtap="gbModalSwitch">取消</view>
+      </view>
+  </block>
+
+</view>

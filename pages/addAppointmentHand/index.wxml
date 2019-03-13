@@ -1,0 +1,98 @@
+<!--index.wxml-->
+<form class="container" bindsubmit="{{modState ? 'modAppointment' : 'addAppointment'}}">
+  <view class="pageTitle">
+          <view class="cardHome" bindtap="gotoHome">
+            <image src="../../resource/images/common/cardHome2.png" />
+        </view>
+  {{pageTitle}}
+  </view>
+
+    <textarea class="programInput" name="serviceitem" placeholder="请输入预约项目" auto-height style="min-height: 90rpx;" value="{{serviceitem}}"></textarea>
+
+    <!-- 快捷标签 -->
+    <!-- <view class="box">
+        <view class="itemHead">
+          <view class="des">快捷标签</view>
+          <view></view>
+        </view>
+        <view class="itemList">
+          <view class="item">翻滚网</view>
+          <view class="item">翻滚美术</view>
+          <view class="item">翻滚艺术</view>
+          <view class="item">翻滚人潮</view>
+          <view class="item">翻滚社区</view>
+        </view>
+    </view> -->
+
+    <!-- 起止日期 -->
+    <view class="timeItem" >
+      <view>时间</view>
+
+      <view>
+        <picker mode="date" name="date" value="{{date}}" start="{{curDate}}" end="2030-01-01" bindchange="bindDateChange">
+            <view style="color:{{date !== '日期' ? '#333' : ''}}">
+              {{date}}
+            </view>
+        </picker>
+      </view>
+
+      <view>
+        <picker mode="selector" name="time1" range="{{time1Array}}" range-key="{{'time'}}" value="{{index1}}" bindchange="bindTimeChange1">
+            <view style="color:{{time1 !== '开始' ? '#333' : ''}}">{{time1}}</view>
+        </picker>
+      </view>
+
+      <view>
+
+        <picker mode="selector" name="time2" range="{{time2Array}}"  range-key="{{'time'}}" value="{{index2}}" bindchange="bindTimeChange2">
+            <view style="color:{{time2 !== '结束' ? '#333' : ''}}">{{time2}}</view>
+        </picker>
+      </view>
+
+    </view>
+
+    <view class="moreInfo" style="height:{{remarkState ? 'auto' : 0}}">
+        <!-- 选填 -->
+        <view class="bbox">
+          <view class="bitem xt">
+            <view>
+              <input class="grayStyle" name="empolyee" type="text" value="{{empolyee}}" placeholder="参与人员  (选填)"> </input>
+            </view>
+            <view></view>
+            <view></view>
+          </view>
+
+          <view class="bitem xt">
+            <view>
+              <input class="grayStyle" name="address" type="text" value="{{address}}" placeholder="添加地址  (选填)"></input>
+            </view>
+            <view></view>
+            <view bindtap="getMapAddress"><image class="foldIcon location" src="../../resource/images/common/location3a.png"/></view>
+          </view>
+        </view>
+
+        <block wx:if="{{remarkState}}">
+            <textarea class="programInput" name="remarks" value="{{remarks}}" placeholder="添加备注" auto-height style="min-height: 140rpx;margin-top:30rpx;"></textarea>
+        </block>
+
+    </view>
+
+    <view class="moreInfoTag" bindtap="remarkSwitch">
+      <block wx:if="{{remarkState}}">
+        收起更多
+        <image src="../../resource/images/common/icon-t3.png"></image>
+      </block>
+      <block wx:else>
+        展开更多
+        <image src="../../resource/images/common/icon-b3.png"></image>
+      </block>
+    </view>
+
+    <!-- 语音跳转返回 -->
+
+    <!-- <view class="vocieInput" bindtap="voiceTip">
+      <image src="../../resource/images/common/voice3.png" />
+    </view> -->
+
+    <button class="addSure {{addSure ? '' : 'disableClick'}}"  form-type="submit">{{modState ? '确定修改' : '确定添加'}}</button>
+</form>

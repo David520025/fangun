@@ -1,0 +1,159 @@
+.cardHome {
+    position: absolute;
+    left: 0;
+    right: 500rpx;
+    top: 0;
+    height: 88rpx;
+
+    z-index: 101;
+}
+
+.cardHome > image {
+    display: block;
+    width:37rpx;
+    height: 36rpx;
+
+    margin-top: 26rpx;
+    margin-left: 30rpx;
+}
+
+.authorizeStateTop,
+.authorizeStateBottom  {
+    position: fixed;
+    right: 0;
+    left: 0;
+    height: 100rpx;
+    z-index: 9999;
+    opacity: 0;
+}
+
+.authorizeStateTop {
+    top: 0;
+}
+
+.authorizeStateBottom {
+    bottom: 0;
+}
+
+.pageTitle {
+    position: relative;
+    font-family:PingFangSC-Medium;
+    font-size:36rpx;
+    color:#fff;
+    background-color:rgba(243,67,67,1);
+
+    width:100%;
+    text-align:center;
+    line-height: 88rpx;
+}
+
+.appointMentBox {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 300rpx;
+
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.appointMent {
+    background-color:rgb(245, 65, 60);
+    font-family:PingFangSC-Regular;
+    font-size:30rpx;
+    text-align:center;
+    color:#fff;
+    line-height: 98rpx;
+    z-index: 11;
+    border:none;
+    border-radius: 0;
+}
+
+.box {
+    position: relative;
+    box-sizing: border-box;
+    margin:134rpx 30rpx 30rpx 30rpx;
+    padding: 79rpx 32rpx 40rpx 32rpx;
+
+    font-family:PingFangSC-Regular;
+
+    background-color:#fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 10rpx;
+}
+
+.box .logo {
+    position: absolute;
+    top: -60rpx;
+    left:0;
+    right:0;    
+    margin-left: auto;
+    margin-right: auto;
+
+    display: block;
+    width: 120rpx;
+    height:120rpx;
+    border-radius: 50%;
+}
+
+.box .name {
+    font-family:PingFangSC-Regular;
+    font-size:28rpx;
+    text-align:center;
+    color: rgb(102, 102, 102);
+
+    margin-bottom: 62rpx;
+}
+
+.box .date {
+    font-family:PingFangSC-Medium;
+    font-size:36rpx;
+    text-align:center;
+    color: rgb(51, 51, 51);
+}
+
+.box .time {
+    font-family:PingFangSC-Medium;
+    font-size:36rpx;
+    text-align:center;
+    color: rgb(243, 67, 67);
+
+    margin-bottom: 62rpx;
+}
+
+.box .item {
+    margin-bottom: 18rpx;
+}
+
+.box .item:last-child {
+    margin-bottom: 0;
+}
+
+.box .item {
+    display: flex;
+    font-family:PingFangSC-Regular;
+    font-size:28rpx;
+    color: rgb(102, 102, 102);
+}
+
+.box .item image:nth-child(1) {
+    display: block;
+    box-sizing: border-box;
+    width: 30rpx;
+    height: 30rpx;
+    margin-top: 4rpx;
+    margin-right: 22rpx;
+}
+
+
+.box .item view:nth-child(2) {
+    width: 150rpx;
+}
+
+
+.box .item view:nth-child(3){
+    width:calc(100% - 202rpx);
+    display: flex;
+    flex-wrap: wrap;
+}

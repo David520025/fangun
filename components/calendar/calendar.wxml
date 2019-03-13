@@ -1,0 +1,29 @@
+<view class="calendar {{skin}}">
+	<view class='tit'>
+		<view>
+      <!-- <view class='pre' bindtap='gotoPreMonth' wx:if="{{currentMonth>monthStart&&monthStart!=''}}">{{'<'}}</view> -->
+      <view class='pre' bindtap='gotoPreMonth' wx-if="{{preShow}}">{{'<'}}</view>
+    </view>
+		<view class='current'>
+      <text>{{currentMonth}}月，</text>
+      <text>{{currentYear}}</text>
+    </view>
+		<view>
+      <!-- <view class='next' bindtap='gotoNextMonth' wx:if="{{currentMonth<monthEnd}}">{{'>'}}</view> -->
+      <view class='next' bindtap='gotoNextMonth' wx-if="{{nextShow}}">{{'>'}}</view>
+    </view>
+	</view>
+
+	<view class='content' data-todayMonth = "{{nowMonth}}">
+		<view>日</view>
+		<view>一</view>
+		<view>二</view>
+		<view>三</view>
+		<view>四</view>
+		<view>五</view>
+		<view>六</view>
+		<view 	wx:for="{{allArr}}" 	wx:key="{{index}}" class="ago {{item.activity==1?'able':' '}} {{item.disabled?'disabled':''}} {{item.month == 'current' ? '' : 'gray'}} {{(currentMonth==nowMonth&&item.date<todayDay)?'ago':''}} {{(currentMonth==nowMonth&&item.date==todayDay)?'underline':''}} {{selectDay==item.dayId?'selectDay':''}}"	data-year='{{currentYear}}' data-cumonth='{{currentMonth}}' data-nomonth='{{nowMonth}}' data-date = '{{item.date}}' data-ac = "{{item.activity}} "  data-id="{{item.dayId}}" bindtap='{{item.activity==1?"selectDate":""}}{{item.disabled?"selectRestDay":""}}'>{{item.date}}</view>
+	</view>
+  <!-- class=" {{item.month == 'current' ? 'ago' : 'gray'}} {{(currentMonth==nowMonth&&item.date>0&&item.date<todayDay)?'ago':''}} {{currentMonth==nowMonth&&item.date==todayDay?'underline':''}} {{item.activity==1?'able':' '}}   " -->
+  <!--  -->
+</view>
